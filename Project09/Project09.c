@@ -11,7 +11,6 @@ Date: 10-26-16
 */
 
 #include <stdio.h>
-#include <string.h>
 
 
 int findstring();
@@ -20,8 +19,10 @@ int insertstring();
 int main()
 {
 
-	findstring();
-	insertstring();
+	//Part 1 calls findstring
+	findstring(); 
+	//Part 2 calls insertstring
+	insertstring(); 
 
 
 	return 0;
@@ -30,21 +31,21 @@ int main()
 
 int findstring()
 {
-	char str[] = "a chatterbox";
-	char sub[] = "hat";
+	char str[] = "a chatterbox";	//string 1
+	char sub[] = "hat";				//string 2
 
-	char *a, *b, *c;
-	int i = 0, j = 0, id = 0;
+	char *a, *b, *c;				//pointers for variables
+	int i = 0, j = 0, id = 0;		//intializing variables
 
-	a = str;
-	b = sub;
+	a = str;						//setting pointer one to first string
+	b = sub;						//setting pointer two to second string
 
-	for (i = 0; i<strlen(str); i++)
+	for (i = 0; i<12; i++)			//loop to kick off check
 	{
 		if (*a == *b)
 		{
 			c = a;
-			for (j = 0; j<strlen(sub); j++)
+			for (j = 0; j<3; j++)
 			{
 				if (*c == *b)
 				{
@@ -54,7 +55,7 @@ int findstring()
 					break;
 			}
 			b = sub;
-			if (j == strlen(sub))
+			if (j == 3)
 			{
 				id = 1;
 				printf("\nPart1:");
@@ -75,16 +76,12 @@ int insertstring()
 	char *str2 = "per";
 	char  str3[50];
 	int x = 10;
+	
 	strncpy(str3, str1, x);
 	str3[x] = '\0';
 	strcat(str3, str2);
 	strcat(str3, str1 + x);
 	printf("\nPart 2:\n");
 	printf("%s\n\n", str3);
-
-
-
-
-
 }
 
