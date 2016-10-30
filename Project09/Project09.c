@@ -15,13 +15,13 @@ Date: 10-26-16
 
 
 int findstring();
-//int insertstring();
+int insertstring();
 
 int main()
 {
 
 	findstring();
-	//insertstring();
+	insertstring();
 
 
 	return 0;
@@ -57,7 +57,8 @@ int findstring()
 			if (j == strlen(sub))
 			{
 				id = 1;
-				printf("\nSubstring found at index : %d\n", i);
+				printf("\nPart1:");
+				printf("\nSubstring found at index : %d\n\n", i);
 			}
 		}
 		a++;
@@ -68,43 +69,22 @@ int findstring()
 	}
 }
 
-/*int insertstring()
+int insertstring()
 {
-	char str[] = "a chatterbox";
-	char sub[] = "hat";
+	char *str1 = "the wrong son";
+	char *str2 = "per";
+	char  str3[50];
+	int x = 10;
+	strncpy(str3, str1, x);
+	str3[x] = '\0';
+	strcat(str3, str2);
+	strcat(str3, str1 + x);
+	printf("\nPart 2:\n");
+	printf("%s\n\n", str3);
 
-	char *p1, *p2, *p3;
-	int i = 0, j = 0, flag = 0;
 
-	p1 = str;
-	p2 = sub;
 
-	for (i = 0; i<strlen(str); i++)
-	{
-		if (*p1 == *p2)
-		{
-			p3 = p1;
-			for (j = 0; j<strlen(sub); j++)
-			{
-				if (*p3 == *p2)
-				{
-					p3++; p2++;
-				}
-				else
-					break;
-			}
-			p2 = sub;
-			if (j == strlen(sub))
-			{
-				flag = 1;
-				printf("\nSubstring found at index : %d\n", i);
-			}
-		}
-		p1++;
-	}
-	if (flag == 0)
-	{
-		printf("Substring NOT found");
-	}
-}*/
+
+
+}
 
